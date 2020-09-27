@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Bonus {
 	public static void main(String[] args) {
-		printBonusDatesBetween(2010, 2015);
+		printBonusDatesBetween(1232, 9999);
 	}
 	
 	public static void printBonusDatesBetween(int fromYear, int toYear){
@@ -21,7 +21,7 @@ public class Bonus {
 			dayNR = Integer.parseInt(days);
 			monthNR = Integer.parseInt(months);
 			
-			if(dayNR < 32 && monthNR < 13) {
+			if(dayNR < 32 && 1 < monthNR && monthNR < 13 ){
 				System.out.println(originalYear + "-" + months + "-" + days );
 			}
 			
