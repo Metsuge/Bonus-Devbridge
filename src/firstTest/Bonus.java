@@ -4,11 +4,11 @@ import java.util.List;
 
 public class Bonus {
 	public static void main(String[] args) {
-		printBonusDatesBetween(100, 9999);
+		printBonusDatesBetween(10000, 9999);
 	}
 	
 	public static void printBonusDatesBetween(int fromYear, int toYear){
-		if( !(fromYear > 999) || !(toYear < 10000) ) {
+		if( !(fromYear > 999 && fromYear < 10000) || !(toYear < 10000) ) {
 			System.out.println("Insert years from min 1000 to max 9999");
 		}
 		else {
