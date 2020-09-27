@@ -4,28 +4,34 @@ import java.util.List;
 
 public class Bonus {
 	public static void main(String[] args) {
-		printBonusDatesBetween(1232, 9999);
+		printBonusDatesBetween(100, 9999);
 	}
 	
 	public static void printBonusDatesBetween(int fromYear, int toYear){
-		List<Integer> listOfYear = getNumberRange(fromYear, toYear);
-		
-		int dayNR = 0;
-		int monthNR = 0;
-		String originalYear = "";
-		
-		for(int element:listOfYear) {
-			originalYear = Integer.toString(element);
-			String days = reverse(originalYear.substring(0,2)); //days
-			String months = reverse(originalYear.substring(2, 4)); //months
-			dayNR = Integer.parseInt(days);
-			monthNR = Integer.parseInt(months);
+		if( !(fromYear > 999) || !(toYear < 10000) ) {
+			System.out.println("Insert years from min 1000 to max 9999");
+		}
+		else {
+			List<Integer> listOfYear = getNumberRange(fromYear, toYear);
 			
-			if(dayNR < 32 && 1 < monthNR && monthNR < 13 ){
-				System.out.println(originalYear + "-" + months + "-" + days );
+			int dayNR = 0;
+			int monthNR = 0;
+			String originalYear = "";
+			
+			for(int element:listOfYear) {
+				originalYear = Integer.toString(element);
+				String days = reverse(originalYear.substring(0,2)); //days
+				String months = reverse(originalYear.substring(2, 4)); //months
+				dayNR = Integer.parseInt(days);
+				monthNR = Integer.parseInt(months);
+				
+				if(dayNR < 32 && 1 < monthNR && monthNR < 13 ){
+					System.out.println(originalYear + "-" + months + "-" + days );
+				}
+				
+				
 			}
-			
-		};	
+		}
 	}
 	
 	public static String reverse(String str) {
